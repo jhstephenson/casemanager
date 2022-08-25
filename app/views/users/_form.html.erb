@@ -1,0 +1,40 @@
+<%= form_with(model: user) do |f| %> 
+
+    <%= render "shared/errors", object: user %>
+
+    <%= f.label :name_first, "First Name" %>
+    <%= f.text_field :name_first, autofocus: true %>
+    <%= f.label :name_middle, "Middle Name" %>
+    <%= f.text_field :name_middle %>
+    <%= f.label :name_last, "Last Name" %>
+    <%= f.text_field :name_last %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    
+
+
+    <%= f.label :phone_office %>
+    <%= f.text_field :phone_office %>
+    <%= f.label :phone_cell %>
+    <%= f.text_field :phone_cell %>
+    <%= f.label :phone_other %>
+    <%= f.text_field :phone_other %>
+
+    <%= f.label :date_of_birth %>
+    <%= f.text_field :date_of_birth %>
+
+    <%= f.label :role %>
+    <%= f.select :role, User::ROLE_OPTIONS, prompt: "Pick one" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation, "Confirm Password" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit %>
+
+<% end %>

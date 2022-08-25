@@ -1,0 +1,36 @@
+<section class="user">
+  <h1>Name: <%= @user.name %></h1>
+  <table>
+
+    <tr>
+      <td>First Name: <%= @user.name_first %></td>
+      <td>Middle Name: <%= @user.name_middle %></td>
+      <td>Last Name: <%= @user.name_last %></td>
+      <td>Initials: <%= @user.initials %></td>
+    </tr>
+    <tr>
+      <td>Email: <%= @user.email %></td>
+    </tr>
+    <tr>
+      <td><strong>Phone Numbers:</strong></td>
+    </tr>
+    <tr>
+      <td>Office Phone: <%= @user.phone_office %></td>
+      <td>Cell Phone: <%= @user.phone_cell %></td>
+      <td>Other Phone: <%= @user.phone_other %></td>
+    </tr>
+    <tr>
+      <td>Role: <%= @user.role %></td>
+    </tr>
+  </table>
+
+</section>
+
+  
+  <div>
+    <%= link_to 'Edit User', edit_user_path(@user), class: "btn btn-primary" %>
+    <%= link_to 'Delete User', @user,
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, 
+        class: "btn btn-danger" %>
+  </div>
+  

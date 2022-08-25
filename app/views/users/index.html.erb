@@ -1,0 +1,30 @@
+<h1><%= pluralize(@users.size, "User") %></h1>
+
+<table class="table">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.role %></td>
+            <td>
+                <%= link_to user, class: "btn btn-primary" do %>
+                  <i class="bi bi-eye" aria-hidden="true"> </i>
+                <% end %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<section class="admin">
+<%= link_to "Add New User", new_user_path, class: "button" %>
+</section>
