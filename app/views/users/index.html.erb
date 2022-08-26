@@ -16,9 +16,11 @@
             <td><%= user.email %></td>
             <td><%= user.role %></td>
             <td>
-                <%= link_to user, class: "btn btn-primary" do %>
-                  <i class="bi bi-eye" aria-hidden="true"> </i>
-                <% end %>
+
+              <%= link_to user, class: "btn btn-primary" do %>
+                <i class="glyphicon glyphicon-zoom-in"></i>
+              <% end %>
+                
             </td>
         </tr>
         <% end %>
